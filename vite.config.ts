@@ -15,4 +15,21 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    // Increase the warning limit for chunk size
+    chunkSizeWarningLimit: 1000, // in kBs (default is 500)
+    
+    rollupOptions: {
+      output: {
+        // Customize manual chunks to better organize your code
+        manualChunks: {
+          // Group React and related packages
+          react: ['react', 'react-dom', 'react-toastify'],
+          // Group UI components
+          ui: ['lucide-react'],
+          // You can add more groups as needed
+        },
+      },
+    },
+  },
 });
