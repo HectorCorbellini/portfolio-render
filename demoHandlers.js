@@ -6,10 +6,14 @@ function launchJavaApp(jarFileName, args = []) {
   return (req, res) => {
     console.log(`Handling demo request for ${jarFileName}`);
     if (process.env.PROJECT_DOMAIN || process.env.RENDER_EXTERNAL_URL) {
+      // In production on Glitch or Render, provide a download URL for the demo
+      const host = req.get('host');
+      const protocol = req.protocol;
+      const downloadUrl = `${protocol}://${host}/apps/${jarFileName}`;
       return res.json({
         success: true,
-        message: `${jarFileName} Demo Information`,
-        details: `When running locally, this would launch the ${jarFileName}`
+        message: `Downloading ${jarFileName}`,
+        downloadUrl
       });
     }
 
@@ -37,10 +41,14 @@ function launchExecutable(executableName) {
   return (req, res) => {
     console.log(`Handling demo request for ${executableName}`);
     if (process.env.PROJECT_DOMAIN || process.env.RENDER_EXTERNAL_URL) {
+      // In production on Glitch or Render, provide a download URL for the executable
+      const host = req.get('host');
+      const protocol = req.protocol;
+      const downloadUrl = `${protocol}://${host}/apps/${executableName}`;
       return res.json({
         success: true,
-        message: `${executableName} Demo Information`,
-        details: `When running locally, this would launch the ${executableName}`
+        message: `Downloading ${executableName}`,
+        downloadUrl
       });
     }
 

@@ -20,6 +20,7 @@ app.use(express.static(config.distDir));
 
 // Serve demo files from the root directory
 app.use('/files', express.static(config.filesDir));
+app.use('/apps', express.static(config.appsDir));
 
 // Endpoint to open a local project directory or execute specific applications
 app.post('/api/open', (req, res) => {

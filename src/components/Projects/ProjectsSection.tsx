@@ -29,6 +29,12 @@ const ProjectsSection: React.FC = () => {
         alert(`Failed to open project: ${data.error}`);
         return;
       }
+      // In production, API may return a downloadUrl for the demo
+      if (data.downloadUrl) {
+        // Navigate directly to the download URL
+        window.location.href = data.downloadUrl;
+        return;
+      }
       // Show demo information or success message
       alert(data.details || data.message || 'Demo launched');
     } catch (error) {
