@@ -24,10 +24,13 @@ const ProjectsSection: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ path }),
       });
+      const data = await response.json();
       if (!response.ok) {
-        const data = await response.json();
         alert(`Failed to open project: ${data.error}`);
+        return;
       }
+      // Show demo information or success message
+      alert(data.details || data.message || 'Demo launched');
     } catch (error) {
       console.error(error);
       alert('Error opening project');

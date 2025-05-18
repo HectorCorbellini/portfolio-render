@@ -5,7 +5,7 @@ import config from './config.js';
 function launchJavaApp(jarFileName, args = []) {
   return (req, res) => {
     console.log(`Handling demo request for ${jarFileName}`);
-    if (process.env.PROJECT_DOMAIN) {
+    if (process.env.PROJECT_DOMAIN || process.env.RENDER_EXTERNAL_URL) {
       return res.json({
         success: true,
         message: `${jarFileName} Demo Information`,
@@ -36,7 +36,7 @@ function launchJavaApp(jarFileName, args = []) {
 function launchExecutable(executableName) {
   return (req, res) => {
     console.log(`Handling demo request for ${executableName}`);
-    if (process.env.PROJECT_DOMAIN) {
+    if (process.env.PROJECT_DOMAIN || process.env.RENDER_EXTERNAL_URL) {
       return res.json({
         success: true,
         message: `${executableName} Demo Information`,
