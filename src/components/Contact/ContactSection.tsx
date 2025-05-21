@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactForm';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, type LucideProps } from 'lucide-react';
 import { socialLinks } from '../../data/social';
 import * as LucideIcons from 'lucide-react';
 
@@ -42,15 +42,19 @@ const ContactSection: React.FC = () => {
                 
                 <div className="flex items-start">
                   <div className="bg-indigo-100 dark:bg-indigo-800 p-3 rounded-full mr-4">
-                    <Phone className="text-indigo-600 dark:text-indigo-300" size={20} />
+                    <MessageCircle className="text-indigo-600 dark:text-indigo-300" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-800 dark:text-white">Phone</h4>
-                    <a 
-                      href="tel:+59891633183" 
-                      className="text-indigo-600 dark:text-indigo-400 hover:underline"
+                    <h4 className="font-medium text-gray-800 dark:text-white">WhatsApp</h4>
+                    <a
+                      href="https://wa.me/59891633183"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-green-100 dark:bg-green-800 hover:bg-green-200 dark:hover:bg-green-700 text-green-600 dark:text-green-300 font-medium py-2 px-4 rounded transition-colors"
+                      aria-label="Chat on WhatsApp"
                     >
-                      +598 91633183
+                      <MessageCircle className="mr-2" size={20} />
+                      <span>Chat on WhatsApp</span>
                     </a>
                   </div>
                 </div>
@@ -74,17 +78,17 @@ const ContactSection: React.FC = () => {
                 </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((link) => {
-                    const Icon = LucideIcons[link.icon as keyof typeof LucideIcons];
+                    const IconComponent = LucideIcons[link.icon as keyof typeof LucideIcons] as React.FC<LucideProps>;
                     return (
-                      <a 
-                        key={link.platform} 
-                        href={link.url} 
-                        target="_blank" 
+                      <a
+                        key={link.platform}
+                        href={link.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="bg-indigo-100 dark:bg-indigo-800 hover:bg-indigo-200 dark:hover:bg-indigo-700 p-3 rounded-full transition-colors"
                         aria-label={link.platform}
                       >
-                        {Icon && <Icon className="text-indigo-600 dark:text-indigo-300" size={20} />}
+                        {IconComponent && <IconComponent className="text-indigo-600 dark:text-indigo-300" size={20} />}
                       </a>
                     );
                   })}

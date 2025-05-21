@@ -109,7 +109,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose, o
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center"
             >
               <Play size={18} className="mr-2" />
-              Launch Demo
+              Demo
             </button>
             <button 
               onClick={() => setShowDescription(!showDescription)}

@@ -17,29 +17,18 @@ const ProjectsSection: React.FC = () => {
     setIsModalOpen(false);
   };
 
-  const launchDemo = async (path: string) => {
-    try {
-      const response = await fetch('/api/open', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ path }),
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        alert(`Failed to open project: ${data.error}`);
-        return;
-      }
-      // In production, API may return a downloadUrl for the demo
-      if (data.downloadUrl) {
-        // Navigate directly to the download URL
-        window.location.href = data.downloadUrl;
-        return;
-      }
-      // Show demo information or success message
-      alert(data.details || data.message || 'Demo launched');
-    } catch (error) {
-      console.error(error);
-      alert('Error opening project');
+  // Map project IDs to demo video URLs
+  const demoVideos: Record<string, string> = {
+    'ecosystem-simulation': '/videos/ECOsystemISLA.mp4',
+    'caesar-cipher': '/videos/Encryptor.mp4',
+  };
+
+  const launchDemo = (path: string) => {
+    const videoUrl = demoVideos[path];
+    if (videoUrl) {
+      window.open(videoUrl, '_blank');
+    } else {
+      alert('Demo video not available');
     }
   };
 

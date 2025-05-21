@@ -56,7 +56,7 @@ This portfolio showcases several interactive projects with demo capabilities:
 
 1. **Caesar Cipher**: A Java-based encryption tool with a Swing GUI interface that demonstrates encryption/decryption using the Caesar cipher method
 2. **Ecosystem Simulation**: A Java simulation of an ecosystem with various species that visualizes population dynamics
-3. **Code Processor**: A Python-based code analysis and processing tool for examining and transforming source code
+3. **Code Processor**: A sophisticated code processing tool for analyzing them using appropriate AI environments.
 
 The demo functionality is implemented through an Express backend that executes the appropriate files when the "Launch Demo" button is clicked. When running locally, this allows direct launching of applications from the portfolio interface.
 

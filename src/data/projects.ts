@@ -22,10 +22,10 @@ export const projects: Project[] = [
   {
     id: 'code-processor',
     title: 'Code Processor',
-    description: 'A sophisticated code analysis and processing tool for Python applications with clean code metrics.',
+    description: 'A sophisticated code processing tool for analyzing them using appropriate AI environments.',
     image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     tags: ['Python', 'Static Analysis', 'Clean Architecture', 'Metrics'],
     demoPath: 'code-processor',
-    detailedDescription: 'The Code Processor is a powerful tool for analyzing and processing Python source code. It implements clean architecture principles to provide detailed code metrics, identify potential improvements, and ensure adherence to coding standards. Features include code complexity analysis, dependency mapping, and automated refactoring suggestions, all designed to help developers maintain high-quality, maintainable code.'
+    detailedDescription: 'The Code Processor is a Python application designed to combine multiple code files from a directory into a single text file. This makes it easier to share codebases with AI tools like ChatGPT, Gemini, GitHub Copilot, and Codeium for analysis and interpretation. This tool helps developers format their code in a way that\'s optimized for sharing with AI assistants.'
   }
 ];

@@ -3,17 +3,7 @@ import { SocialLink } from '../types';
 export const socialLinks: SocialLink[] = [
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/',
+    url: 'https://www.linkedin.com/in/h%C3%A9ctor-corbellini-726553221/',
     icon: 'Linkedin'
-  },
-  {
-    platform: 'Facebook',
-    url: 'https://facebook.com/',
-    icon: 'Facebook'
-  },
-  {
-    platform: 'GitHub',
-    url: 'https://github.com/',
-    icon: 'Github'
   }
 ];
