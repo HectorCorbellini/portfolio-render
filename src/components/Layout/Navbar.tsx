@@ -89,6 +89,28 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
+              
+              <div className="flex space-x-4 pt-2 border-t border-indigo-800">
+                <span className="text-white">Language:</span>
+                <button 
+                  onClick={() => {
+                    i18n.changeLanguage('en');
+                    setIsOpen(false);
+                  }} 
+                  className="text-white hover:text-indigo-300"
+                >
+                  EN
+                </button>
+                <button 
+                  onClick={() => {
+                    i18n.changeLanguage('es');
+                    setIsOpen(false);
+                  }} 
+                  className="text-white hover:text-indigo-300"
+                >
+                  ES
+                </button>
+              </div>
             </div>
           </div>
         )}

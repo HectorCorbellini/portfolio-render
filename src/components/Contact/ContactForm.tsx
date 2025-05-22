@@ -132,6 +132,8 @@ const ContactForm: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              onPaste={(e) => e.stopPropagation()}
+              autoComplete="name"
               className={`w-full px-4 py-3 rounded border ${
                 errors.name 
                   ? 'border-red-500 bg-red-50 dark:bg-red-900/10' 
@@ -157,6 +159,8 @@ const ContactForm: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              onPaste={(e) => e.stopPropagation()}
+              autoComplete="email"
               className={`w-full px-4 py-3 rounded border ${
                 errors.email 
                   ? 'border-red-500 bg-red-50 dark:bg-red-900/10' 
@@ -181,6 +185,7 @@ const ContactForm: React.FC = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              onPaste={(e) => e.stopPropagation()}
               rows={5}
               className={`w-full px-4 py-3 rounded border ${
                 errors.message 
