@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { projects } from '../../data/projects';
 import { Project } from '../../types';
+import { demoVideos } from '../../config/demoVideos';
 
 const ProjectsSection: React.FC = () => {
+  const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,18 +20,14 @@ const ProjectsSection: React.FC = () => {
     setIsModalOpen(false);
   };
 
-  // Map project IDs to demo video URLs
-  const demoVideos: Record<string, string> = {
-    'ecosystem-simulation': '/videos/ECOsystemISLA.mp4',
-    'caesar-cipher': '/videos/Encryptor.mp4',
-  };
+  // demoVideos imported from config
 
   const launchDemo = (path: string) => {
     const videoUrl = demoVideos[path];
     if (videoUrl) {
       window.open(videoUrl, '_blank');
     } else {
-      alert('Demo video not available');
+      alert(t('projectsSection.demoUnavailable'));
     }
   };
 
@@ -37,11 +36,10 @@ const ProjectsSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            My Projects
+            {t('projectsSection.title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Explore my portfolio of Java and Python based applications, demonstrating clean architecture, 
-            robust functionality, and intuitive user interfaces.
+            {t('projectsSection.description')}
           </p>
         </div>
 

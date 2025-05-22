@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +27,8 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
-  ];
+  const navKeys = ['home','projects','skills','about','contact'] as const;
+  const navLinks = navKeys.map((key) => ({ name: t(`nav.${key}`), href: `#${key}`, key }));
 
   return (
     <nav 
@@ -48,12 +45,16 @@ const Navbar: React.FC = () => {
             <span className="text-indigo-300 mr-1">HC</span>
             <span className="hidden sm:inline">Portfolio</span>
           </a>
+          <div className="hidden md:flex items-center space-x-4">
+            <button onClick={() => i18n.changeLanguage('en')} className="text-white hover:text-indigo-300">EN</button>
+            <button onClick={() => i18n.changeLanguage('es')} className="text-white hover:text-indigo-300">ES</button>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.key}
                 href={link.href}
                 className="text-white hover:text-indigo-300 transition-colors"
               >
@@ -80,7 +81,7 @@ const Navbar: React.FC = () => {
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.key}
                   href={link.href}
                   className="text-white hover:text-indigo-300 transition-colors"
                   onClick={() => setIsOpen(false)}

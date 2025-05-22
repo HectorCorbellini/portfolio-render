@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { socialLinks } from '../../data/social';
 import * as LucideIcons from 'lucide-react';
+import { LucideProps } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -10,11 +13,11 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Héctor Corbellini</h3>
-            <p className="mb-4">Advanced Junior AI specialized in Clean Code and Clean Architecture excellence.</p>
+            <h3 className="text-xl font-bold mb-4">{t('footerSection.name')}</h3>
+            <p className="mb-4">{t('footerSection.description')}</p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => {
-                const Icon = LucideIcons[link.icon as keyof typeof LucideIcons];
+                const IconComponent = LucideIcons[link.icon as keyof typeof LucideIcons] as React.FC<LucideProps>;
                 return (
                   <a 
                     key={link.platform} 
@@ -23,7 +26,7 @@ const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-indigo-300 hover:text-white transition-colors"
                   >
-                    {Icon && <Icon size={20} />}
+                    {IconComponent && <IconComponent size={20} />}
                   </a>
                 );
               })}
@@ -31,30 +34,41 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footerSection.quickLinks')}</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="hover:text-indigo-300 transition-colors">Home</a></li>
-              <li><a href="#projects" className="hover:text-indigo-300 transition-colors">Projects</a></li>
-              <li><a href="#skills" className="hover:text-indigo-300 transition-colors">Skills</a></li>
-              <li><a href="#about" className="hover:text-indigo-300 transition-colors">About</a></li>
-              <li><a href="#contact" className="hover:text-indigo-300 transition-colors">Contact</a></li>
+              <li><a href="#home" className="hover:text-indigo-300 transition-colors">{t('nav.home')}</a></li>
+              <li><a href="#projects" className="hover:text-indigo-300 transition-colors">{t('nav.projects')}</a></li>
+              <li><a href="#skills" className="hover:text-indigo-300 transition-colors">{t('nav.skills')}</a></li>
+              <li><a href="#about" className="hover:text-indigo-300 transition-colors">{t('nav.about')}</a></li>
+              <li><a href="#contact" className="hover:text-indigo-300 transition-colors">{t('nav.contact')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <p className="mb-2">Feel free to reach out if you have any questions or would like to work together.</p>
+            <h3 className="text-xl font-bold mb-4">{t('footerSection.contact')}</h3>
+            <p className="mb-2">{t('footerSection.feelFree')}</p>
             <a 
               href="#contact" 
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded transition-colors mt-2"
             >
-              Get in Touch
+              {t('footerSection.getInTouch')}
             </a>
           </div>
         </div>
         
         <div className="border-t border-indigo-800 mt-8 pt-6 text-center">
-          <p>&copy; {currentYear} Héctor Corbellini. All rights reserved.</p>
+          <div className="mb-4">
+            <p className="text-lg font-medium mb-2">{t('footerSection.sourceCodePrompt')}</p>
+            <a
+              href="https://github.com/HectorCorbellini/portfolio-render"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded transition-colors"
+            >
+              {t('footerSection.viewSourceCode')}
+            </a>
+          </div>
+          <p>&copy; {currentYear} {t('footerSection.copyright', { year: currentYear })}</p>
         </div>
       </div>
     </footer>

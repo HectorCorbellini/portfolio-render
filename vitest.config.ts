@@ -7,7 +7,7 @@ export default defineConfig({
     include: [
       'src/**/*.{test,spec}.{js,ts,tsx}',
       'src/__tests__/**/*.test.ts',
-      'tests/**/*.test.ts'
+      'tests/**/*.test.{ts,tsx}'
     ],
     coverage: {
       reporter: ['text', 'lcov'],

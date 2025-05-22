@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from './components/Layout/Navbar';
 import HeroSection from './components/Home/HeroSection';
 import ProjectsSection from './components/Projects/ProjectsSection';
@@ -7,42 +7,23 @@ import AboutSection from './components/About/AboutSection';
 import ContactSection from './components/Contact/ContactSection';
 import Footer from './components/Layout/Footer';
 import './index.css';
+import { injectAnimations } from './utils/animations';
 
 function App() {
+  // Default language is set in i18n.ts, no need for state here
+
   useEffect(() => {
     // Update page title
     document.title = 'Héctor Corbellini | Java Developer Portfolio';
-    
-    // Add animation classes to CSS
-    const style = document.createElement('style');
-    style.innerHTML = `
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
-      .animate-fadeIn {
-        animation: fadeIn 0.6s ease-out forwards;
-      }
-      
-      .animate-fadeInDelay {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-out 0.3s forwards;
-      }
-      
-      .animate-fadeInDelayLong {
-        opacity: 0;
-        animation: fadeIn 0.6s ease-out 0.6s forwards;
-      }
-    `;
-    document.head.appendChild(style);
+    // Inject animations
+    const cleanupAnimations = injectAnimations();
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault();
         
-        const href = this.getAttribute('href');
+        const href = anchor.getAttribute('href');
         if (!href) return;
         
         const targetElement = document.querySelector(href);
@@ -56,10 +37,12 @@ function App() {
     });
     
     return () => {
-      document.head.removeChild(style);
+      cleanupAnimations();
     };
   }, []);
-  
+
+
+
   return (
     <div className="min-h-screen bg-white dark:bg-indigo-950 text-gray-900 dark:text-white">
       <Navbar />

@@ -1,16 +1,19 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Briefcase, Code, Database, Cpu } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-20 bg-indigo-50 dark:bg-indigo-950">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            About Me
+            {t('aboutSection.title')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Get to know more about my background, expertise, and approach to software development.
+            {t('aboutSection.description')}
           </p>
         </div>
         
@@ -31,20 +34,15 @@ const AboutSection: React.FC = () => {
               Héctor Corbellini
             </h3>
             <p className="text-indigo-600 dark:text-indigo-400 text-lg mb-6">
-              AI fullstack developer specialized in Clean Code and Clean Architecture excellence
+              {t('aboutSection.subtitle')}
             </p>
             
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              With foundation in Java development and a passion for creating efficient, 
-              maintainable software solutions, I specialize in building robust applications in any language that follow 
-              clean architecture principles. My approach combines technical expertise with a deep understanding 
-              of business requirements to deliver high-quality software that exceeds expectations.
+              {t('aboutSection.paragraph1')}
             </p>
             
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              I'm committed to continuous learning and staying current with emerging technologies 
-              and best practices in software development. My goal is to create solutions that not only 
-              solve complex problems but are also elegant, efficient, and easy to maintain.
+              {t('aboutSection.paragraph2')}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -53,8 +51,8 @@ const AboutSection: React.FC = () => {
                   <Code className="text-white" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">Clean Code</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">Writing readable, maintainable code that follows best practices</p>
+                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">{t('aboutSection.features.cleanCode')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{t('aboutSection.features.cleanCodeDesc')}</p>
                 </div>
               </div>
               
@@ -63,8 +61,8 @@ const AboutSection: React.FC = () => {
                   <Briefcase className="text-white" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">Clean Architecture</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">Designing systems with clear separation of concerns</p>
+                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">{t('aboutSection.features.cleanArchitecture')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{t('aboutSection.features.cleanArchitectureDesc')}</p>
                 </div>
               </div>
               
@@ -73,8 +71,8 @@ const AboutSection: React.FC = () => {
                   <Database className="text-white" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">Database Design</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">Creating efficient, scalable data structures</p>
+                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">{t('aboutSection.features.databaseDesign')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{t('aboutSection.features.databaseDesignDesc')}</p>
                 </div>
               </div>
               
@@ -83,8 +81,8 @@ const AboutSection: React.FC = () => {
                   <Cpu className="text-white" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">AI Excellence</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">Leveraging AI techniques to build exact solutions</p>
+                  <h4 className="font-bold text-gray-800 dark:text-white mb-1">{t('aboutSection.features.aiExcellence')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{t('aboutSection.features.aiExcellenceDesc')}</p>
                 </div>
               </div>
             </div>

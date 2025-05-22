@@ -84,19 +84,14 @@ The frontend error handling has been enhanced with:
 - **Code Update**: Replaced hardcoded paths in `server.js` and `demoHandlers.js` with config values
 - **Outcome**: Improved flexibility and maintainability
 
-### How to Run the Application
+### Internationalization / Multilingual Support
 
-1. Start the backend server: `node server.js` (runs on port 3001)
-2. Start the frontend development server: `npm run dev` (runs on port 5173)
-3. Access the portfolio at http://localhost:5173
-4. Click on project cards to view details and launch demos
-
-### How to Run the Application
-
-1. Start the backend server: `node server.js` (runs on port 3001)
-2. Start the frontend development server: `npm run dev` (runs on port 5173)
-3. Access the portfolio at http://localhost:5173
-4. Click on project cards to view details and launch demos
+- Integrated `react-i18next` and `i18next` for localization support.
+- Created locale files (`en.json`, `es.json`) covering all UI text (navigation, hero, projects, skills, about, contact, footer).
+- Wrapped all static text in `useTranslation` hooks and `t('...')` calls across components.
+- Added EN/ES language toggle buttons in the Navbar for seamless switching.
+- Removed the initial language selection overlay (`App.tsx`) now relying solely on the Navbar toggle.
+- Enabled dynamic language switching without full page reload; ensured fallback behavior for missing keys.
 
 ### How to Run the Application
 

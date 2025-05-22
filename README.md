@@ -4,7 +4,23 @@
 
 ## Live Demo
 
-[View Live Demo on Glitch](https://your-glitch-project.glitch.me/) - Update with your Glitch URL
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/HectorCorbellini/portfolio-render.git
+   cd portfolio-render
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the helper script to start both frontend and backend:
+   ```bash
+   bash run.sh
+   ```
+
+4. Open your browser and navigate to http://localhost:5173
 
 ## Features
 
@@ -66,8 +82,8 @@ Note: The demo functionality works best when running the portfolio locally with 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/HectorCorbellini/codefolio-hub.git
-   cd codefolio-hub
+   git clone https://github.com/HectorCorbellini/portfolio-render.git
+   cd portfolio-render
    ```
 
 2. Install dependencies:
@@ -75,17 +91,12 @@ Note: The demo functionality works best when running the portfolio locally with 
    npm install
    ```
 
-3. Start the backend server:
+3. Run the helper script to start both frontend and backend:
    ```bash
-   node server.js
+   bash run.sh
    ```
 
-4. In a separate terminal, start the frontend development server:
-   ```bash
-   npm run dev
-   ```
-
-5. Open your browser and navigate to http://localhost:5173
+4. Open your browser and navigate to http://localhost:5173
 
 ## 📦 Building for Production
 
@@ -140,32 +151,6 @@ To deploy this portfolio on Render, follow these steps:
 7. **Access Your Deployed Site**:
    - Once deployment is complete, Render will provide a URL
    - Your portfolio will be accessible at that URL
-
-### Glitch Deployment (Alternative)
-
-This portfolio can also be deployed on Glitch with the following features:
-
-- **Full-Stack Application**: Includes both React frontend and Express backend
-- **Demo Functionality**: Special handling for project demos in the Glitch environment
-- **Keep-Alive Script**: Prevents the application from sleeping on Glitch's free tier
-
-#### Setting Up Glitch Deployment
-
-To deploy this portfolio on Glitch, follow these steps:
-
-1. **Create a New Glitch Project**:
-   - Go to [glitch.com](https://glitch.com)
-   - Sign up or log in
-   - Click "New Project" and select "Node.js" (Full-Stack)
-
-2. **Import from GitHub**:
-   - In your Glitch project, click on "Tools" and select "Import/Export"
-   - Choose "Import from GitHub"
-   - Enter the GitHub repository URL: `https://github.com/YOUR_USERNAME/YOUR_REPO_NAME`
-
-3. **Update Keep-Alive Script** (Optional):
-   - Once deployed, update the URL in `keep-alive.js` with your actual Glitch project URL
-   - This helps prevent the app from sleeping after 5 minutes of inactivity
 
 ## 📞 Contact
 

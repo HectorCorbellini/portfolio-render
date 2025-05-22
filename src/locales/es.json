@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Héctor Corbellini",
+    "subtitle": "Desarrollador fullstack de IA especializado en código limpio y excelente arquitectura limpia"
+  },
+  "heroButtons": {
+    "viewWork": "Ver mi trabajo",
+    "contactMe": "Contáctame"
+  },
+  "projectsSection": {
+    "title": "Algunos de mis proyectos",
+    "description": "Explora mi portafolio de aplicaciones basadas en Java y Python que demuestran arquitectura limpia, funcionalidad robusta e interfaces de usuario intuitivas.",
+    "demoUnavailable": "Video de demostración no disponible"
+  },
+  "skillsSection": {
+    "title": "Habilidades Técnicas",
+    "description": "Una visión general completa de mi experiencia y competencia técnica en varias tecnologías.",
+    "categories": {
+      "all": "Todas las habilidades",
+      "languages": "Lenguajes",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de datos",
+      "tools": "Herramientas"
+    }
+  },
+  "aboutSection": {
+    "title": "Acerca de mí",
+    "description": "Conoce más sobre mi formación, experiencia y enfoque en el desarrollo de software.",
+    "subtitle": "Desarrollador fullstack de IA especializado en código limpio y excelente arquitectura limpia",
+    "paragraph1": "Con base en desarrollo Java y una pasión por crear soluciones eficientes y mantenibles, me especializo en construir aplicaciones sólidas en cualquier lenguaje que sigan principios de arquitectura limpia. Mi enfoque combina experiencia técnica con una profunda comprensión de los requisitos de negocio para ofrecer software de alta calidad que supera las expectativas.",
+    "paragraph2": "Estoy comprometido con el aprendizaje continuo y mantenerme al día con tecnologías emergentes y mejores prácticas en desarrollo de software. Mi objetivo es crear soluciones que no solo resuelvan problemas complejos, sino que también sean elegantes, eficientes y fáciles de mantener.",
+    "features": {
+      "cleanCode": "Código limpio",
+      "cleanCodeDesc": "Escribir código legible y mantenible que sigue las mejores prácticas",
+      "cleanArchitecture": "Arquitectura limpia",
+      "cleanArchitectureDesc": "Diseñar sistemas con clara separación de responsabilidades",
+      "databaseDesign": "Diseño de base de datos",
+      "databaseDesignDesc": "Crear estructuras de datos eficientes y escalables",
+      "aiExcellence": "Excelencia en IA",
+      "aiExcellenceDesc": "Aprovechar técnicas de IA para construir soluciones precisas"
+    }
+  },
+  "contactSection": {
+    "title": "Contáctame",
+    "description": "¿Interesado en trabajar juntos? No dudes en contactarme para tu proyecto o colaboración.",
+    "infoTitle": "Información de contacto",
+    "email": "Correo electrónico",
+    "whatsapp": "WhatsApp",
+    "location": "Ubicación",
+    "connectWithMe": "Conéctate conmigo",
+    "chatOnWhatsApp": "Chatear en WhatsApp"
+  },
+  "footerSection": {
+    "name": "Héctor Corbellini",
+    "description": "Desarrollador de software especializado en Código Limpio y excelencia en Arquitectura Limpia.",
+    "quickLinks": "Enlaces rápidos",
+    "contact": "Contacto",
+    "feelFree": "No dudes en contactarme si tienes alguna pregunta o te gustaría trabajar juntos.",
+    "getInTouch": "Contáctame",
+    "copyright": " Héctor Corbellini. Todos los derechos reservados.",
+    "sourceCodePrompt": "¿Quieres ver el código de este sitio? ¡Yo lo hice también!",
+    "viewSourceCode": "Ver Código Fuente"
+  }
+}
